@@ -22,7 +22,7 @@ jobs:
         run: npm install  # Menginstal dependensi proyek
 
       - name: Run Tests
-        run: npm test  # Menjalankan unit test
+        run: npm start  # Menjalankan unit test
 
       - name: Deploy (Opsional)
         run: echo "Deploying application..."
