@@ -23,6 +23,9 @@ jobs:
 
       - name: Run Tests
         run: npm test  # Menjalankan unit test
+      
+      - name: Build Docker image
+        run: docker build -t my-app .
 
       - name: Deploy (Opsional)
         run: echo "Deploying application..."
