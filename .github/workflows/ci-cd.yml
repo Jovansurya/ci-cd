@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+on: 
+  push:
+    branches:
+      - main  # Jalankan pipeline saat ada perubahan di branch 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Menjalankan di environment Linux
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3  # Mengambil kode dari repository
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Menggunakan Node.js versi 18
+
+      - name: Install Dependencies
+        run: npm install  # Menginstal dependensi proyek
+
+      - name: Run Tests
+        run: npm test  # Menjalankan unit test
+
+      - name: Deploy (Opsional)
+        run: echo "Deploying application..."
